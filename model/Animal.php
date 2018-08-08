@@ -1,22 +1,26 @@
 <?php
 abstract class Animal
 {
+	CONST SEXO_FEMININO = 'F';
+
+	CONST SEXO_MASCULINO = 'M';
+
 	//propriedades(atibutos)
-	public $patas;
+	protected $patas;
 
-	public $rabo;
+	protected $rabo;
 
-	public $sexo;
+	protected $sexo;
 
 	protected $nome;
 
-	protected $gosto = array('ração' , 'carne' , 'peixe' , 'milho');
+	protected $gosto;
 
 	abstract public function emitirSom();
 
 	abstract public function reagir(Animal $animal);
 
-	public function comer()
+	public function comer(Animal $animal)
 	{
 		echo "está comendo </br>";
 	}
@@ -25,6 +29,16 @@ abstract class Animal
 	public function andar()
 	{
 		echo "O	animal esta andando </br>";
+	}
+
+	public function getGosto()
+	{
+		return $this->gosto;
+	}
+
+	public function setGosto($gosto)
+	{
+		$this->gosto = $gosto;
 	}
 
 	public function getNome()
@@ -44,7 +58,9 @@ abstract class Animal
 
 	public function setSexo($sexo)
 	{
-		$this->sexo = $sexo;
+		if($sexo!='M' && $sexo=!'F'){
+			throw new Exception('Esta opção não é válida')
+		}
 	}
 
 	public function acasalar(Animal $animal)

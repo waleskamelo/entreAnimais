@@ -24,34 +24,14 @@ require_once 'model/Ave.php';
 
 $cachorro = new Cachorro();
 $cachorro->setNome('Tecca');
-$cachorro->setSexo('Fêmea');
+$cachorro->setSexo(Animal::SEXO_FEMININO);
 
 $cachorro1 = new Cachorro();
 $cachorro1->setNome('Pitoco');
-$cachorro1->setSexo('Macho');
+//chamando constante sexo masculino
+$cachorro1->setSexo(Animal::SEXO_MASCULINO);
+$cachorro1->gosto('ração');
 
 $cachorro->reagir($cachorro);
 
-//$gato->comer($pato);
 
-// $pato->reagir($gato);
-
-// $cachorro->reagir($pato);
-
-// $cachorro->reagir($gato);
-
-// $gato->reagir($cachorro);
-
-// $gato->reagir($pato);
-
-// $gato->reagir($gato1);
-
-// $gato1->acasalar($gato);
-
-//$gato->andar();
-//
-//$pato->voar();
-
-// $cachorro->amamentar();
-
-$cachorro->gosto('ração');

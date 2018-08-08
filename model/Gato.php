@@ -10,10 +10,10 @@ class Gato extends Mamifero
 		echo 'O gato faz, miiiaaaauu! <br>';
 	}
 
-	public function comer(Ave $ave)
+	/*public function comer(Ave $ave)
 	{
 		echo $this->getNome() . ' esta comendo uma ave: ' . $ave->getNome();
-	}
+	}*/
 
 	public function reagir(Animal $animal)
 	{

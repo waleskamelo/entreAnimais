@@ -26,12 +26,12 @@ class Cachorro extends Mamifero
 		}
 	}
 
-	public function comer($gosto)
+	public function comer(Animal $animal)
 	{
-		if(in_array('carne', $gosto)){
-			echo 'isso é carne </br>';
+		if($this->gosto == $animal->getGosto()){
+			echo $this->nome . ' tem preferencia por ' . $animal->getGosto();
 		} else {
-			echo 'isso não é carne </br>';
+			echo ' isso não é carne </br>';
 		}
 	}
 }
