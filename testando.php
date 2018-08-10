@@ -19,8 +19,8 @@ require_once 'model/Ave.php';
 // $gato1->setSexo('Macho');
 //$gato1->setSexo('Fêmea');
 
-//$pato = new Pato();
-//$pato->setNome('Nagasaki');
+$pato = new Pato();
+$pato->setNome('Nagasaki');
 
 $cachorro = new Cachorro();
 $cachorro->setNome('Tecca');
@@ -30,8 +30,8 @@ $cachorro1 = new Cachorro();
 $cachorro1->setNome('Pitoco');
 //chamando constante sexo masculino
 $cachorro1->setSexo(Animal::SEXO_MASCULINO);
-$cachorro1->gosto('ração');
+$cachorro1->setGosto('ração');
 
-$cachorro->reagir($cachorro);
+$cachorro->reagir($pato);
 
 
