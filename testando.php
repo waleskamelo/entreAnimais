@@ -10,14 +10,14 @@ require_once 'model/Cachorro.php';
 require_once 'model/Pato.php';
 require_once 'model/Ave.php';
 
-//$gato = new Gato();
-//$gato->setNome('Melôcôtô');
-//$gato->setSexo('Macho');
+$gato = new Gato();
+$gato->setNome('Melôcôtô');
+$gato->setSexo('Macho');
 
-//$gato1 = new Gato();
-//$gato1->setNome('Bilica');
-// $gato1->setSexo('Macho');
-//$gato1->setSexo('Fêmea');
+$gato1 = new Gato();
+$gato1->setNome('Bilica');
+$gato1->setSexo('Macho');
+$gato1->setSexo('Fêmea');
 
 $pato = new Pato();
 $pato->setNome('Nagasaki');
@@ -32,6 +32,8 @@ $cachorro1->setNome('Pitoco');
 $cachorro1->setSexo(Animal::SEXO_MASCULINO);
 $cachorro1->setGosto('ração');
 
-$cachorro->reagir($pato);
+$cachorro->reagir($gato);
 
-
+//temos um bug, estou passando carne e ele esta dizendo que nao eh carne...
+//tenta resolver agora...massa, manda bala eh contigo...valeu!
+$cachorro->comer('carne');

@@ -21,9 +21,14 @@ abstract class Animal
 
 	abstract public function reagir(Animal $animal);
 
-	public function comer(Animal $animal)
+	public function comer($comida)
 	{
-		echo "está comendo </br>";
+		//in_array procura um valor dentro de um array
+		if (in_array($comida, $this->gosto)) {
+			echo $this->nome . ' gosta muito desse alimento!';
+		} else {
+			echo $this->nome . ' não gosta muito desse alimento :/ </br>';
+		}
 	}
 
 	//andar é uma função comum a todos os animais, por isso a forma de como anda esta especificada na classe pai, as demais vão herdar
@@ -39,7 +44,8 @@ abstract class Animal
 
 	public function setGosto($gosto)
 	{
-		$this->gosto = $gosto;
+		// o [] acrescenta um item no final do array
+		$this->gosto[] = $gosto;
 	}
 
 	public function getNome()
@@ -67,11 +73,6 @@ abstract class Animal
 	public function acasalar(Animal $animal)
 	{
 		echo $this->nome . ' esta acasalando com '. $animal->getNome();
-	}
-
-	public function getClassName() 
-	{
-		return __CLASS__;
 	}
 
 }
