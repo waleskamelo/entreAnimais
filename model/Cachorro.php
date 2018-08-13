@@ -22,7 +22,7 @@ class Cachorro extends Mamifero
 			echo '</pre>';
 			exit;*/
 
-		//instanceof serve para verificar se isso é desta determinada instancia
+		//instanceof serve para verificar se a variavel é um objeto desta determinada instância
 		switch (true) {
 		 	case $animal instanceof Pato:
 		        echo $this->nome . ' correu atras do ' . $reflection->getName() .' </br>';

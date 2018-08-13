@@ -1,7 +1,7 @@
 <?php
 abstract class Animal
 {
-	//contantes, para receber o que for colocado dentro de cada uma, independente de ser igual a "F ou M"
+	//contantes, para receber o que for colocado dentro de cada uma, independente de "F ou M"
 	CONST SEXO_FEMININO = 'F';
 
 	CONST SEXO_MASCULINO = 'M';
@@ -16,6 +16,14 @@ abstract class Animal
 	protected $nome;
 
 	protected $gosto;
+
+	//o construtor leva em seus parametros, as variaveis obrigatorias, as que o objeto precisa para existir
+	//não deixando de ser necessario os sets nas propriedades que não são fixas.
+	public function __construct($sexo, $nome)
+	{
+		$this->sexo = $sexo;
+		$this->nome = $nome;
+	}
 
 	abstract public function emitirSom();
 

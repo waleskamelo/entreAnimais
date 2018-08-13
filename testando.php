@@ -10,30 +10,15 @@ require_once 'model/Cachorro.php';
 require_once 'model/Pato.php';
 require_once 'model/Ave.php';
 
-$gato = new Gato();
-$gato->setNome('Melôcôtô');
-$gato->setSexo('Macho');
+$gato = new Gato(Animal::SEXO_MASCULINO,'Melôcôtô');
 
-$gato1 = new Gato();
-$gato1->setNome('Bilica');
-$gato1->setSexo('Macho');
-$gato1->setSexo('Fêmea');
+$gato1 = new Gato(Animal::SEXO_FEMININO, 'Bilica');
 
-$pato = new Pato();
-$pato->setNome('Nagasaki');
+$pato = new Pato(Animal::SEXO_MASCULINO, 'Nagasaki');
 
-$cachorro = new Cachorro();
-$cachorro->setNome('Tecca');
-$cachorro->setSexo(Animal::SEXO_FEMININO);
-
-$cachorro1 = new Cachorro();
-$cachorro1->setNome('Pitoco');
-//chamando constante sexo masculino
-$cachorro1->setSexo(Animal::SEXO_MASCULINO);
-$cachorro1->setGosto('ração');
-
+$cachorro = new Cachorro(Animal::SEXO_FEMININO, 'Tecca');
 $cachorro->reagir($gato);
-
-//temos um bug, estou passando carne e ele esta dizendo que nao eh carne...
-//tenta resolver agora...massa, manda bala eh contigo...valeu!
 $cachorro->comer('carne');
+
+//Animal::SEXO_MASCULINO -> chamando a constante sexo masculino
+$cachorro1 = new Cachorro(Animal::SEXO_MASCULINO, 'Pitoco');
